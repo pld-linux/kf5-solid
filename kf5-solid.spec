@@ -1,15 +1,15 @@
-%define		kdeframever	5.53
+%define		kdeframever	5.56
 %define		qtver		5.9.0
 %define		kfname		solid
 
 Summary:	Desktop hardware abstraction
 Name:		kf5-%{kfname}
-Version:	5.53.0
+Version:	5.56.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	b7ca9416caae95bb56d72e062a31023b
+# Source0-md5:	2b3708251bb4f86b5b9aae5c4c61348b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -23,6 +23,7 @@ BuildRequires:	bison
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	flex
 BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	ninja
 BuildRequires:	qt5-linguist >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
@@ -65,16 +66,14 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 %build
 install -d build
 cd build
-%cmake \
+%cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	../
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%{__make} -C build/ install \
-        DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{kfname}5_qt --with-qm --all-name --with-kde
 
