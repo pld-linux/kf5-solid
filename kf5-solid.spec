@@ -1,15 +1,15 @@
-%define		kdeframever	5.79
+%define		kdeframever	5.80
 %define		qtver		5.9.0
 %define		kfname		solid
 
 Summary:	Desktop hardware abstraction
 Name:		kf5-%{kfname}
-Version:	5.79.0
+Version:	5.80.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	dd47932e6d4cf3165f92656cf0331699
+# Source0-md5:	b4b3e1400aeb1837ec213838e8a9cd61
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -87,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.md TODO
 %attr(755,root,root) %{_bindir}/solid-hardware5
-%attr(755,root,root) %ghost %{_libdir}/libKF5Solid.so.5
+%ghost %{_libdir}/libKF5Solid.so.5
 %attr(755,root,root) %{_libdir}/libKF5Solid.so.*.*
 %dir %{_libdir}/qt5/qml/org/kde/solid
 %{_libdir}/qt5/qml/org/kde/solid/qmldir
@@ -100,5 +100,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/Solid
 %{_includedir}/KF5/solid_version.h
 %{_libdir}/cmake/KF5Solid
-%attr (755,root,root) %{_libdir}/libKF5Solid.so
+%{_libdir}/libKF5Solid.so
 %{qt5dir}/mkspecs/modules/qt_Solid.pri
