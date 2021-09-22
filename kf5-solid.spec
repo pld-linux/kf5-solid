@@ -1,5 +1,5 @@
 %define		kdeframever	5.86
-%define		qtver		5.14.0
+%define		qtver		5.15.2
 %define		kfname		solid
 
 Summary:	Desktop hardware abstraction
@@ -18,11 +18,12 @@ BuildRequires:	Qt5Gui-devel >= %{qtver}
 BuildRequires:	Qt5Qml-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= %{qtver}
 BuildRequires:	Qt5Xml-devel >= %{qtver}
-BuildRequires:	bison
-BuildRequires:	cmake >= 3.5
+BuildRequires:	bison >= 3.0
+BuildRequires:	cmake >= 3.16
 BuildRequires:	flex
 BuildRequires:	kf5-extra-cmake-modules >= %{version}
 BuildRequires:	libimobiledevice-devel
+BuildRequires:	libmount-devel
 BuildRequires:	libplist-devel
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
@@ -60,7 +61,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	Qt5Core-devel >= %{qtver}
-Requires:	cmake >= 3.5
+Requires:	cmake >= 3.16
 
 %description devel
 Header files for %{kfname} development.
