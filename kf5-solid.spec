@@ -1,15 +1,15 @@
-%define		kdeframever	5.91
+%define		kdeframever	5.92
 %define		qtver		5.15.2
 %define		kfname		solid
 
 Summary:	Desktop hardware abstraction
 Name:		kf5-%{kfname}
-Version:	5.91.0
+Version:	5.92.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	59f5148ddc67455188c81d570167147f
+# Source0-md5:	9c4ce3bcc68c15f005f08b1879508d41
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
