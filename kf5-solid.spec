@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.101
+%define		kdeframever	5.102
 %define		qtver		5.15.2
 %define		kfname		solid
 
 Summary:	Desktop hardware abstraction
 Name:		kf5-%{kfname}
-Version:	5.101.0
-Release:	2
+Version:	5.102.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	6a3d4b9e161fa6fa10e91b08462747d6
+# Source0-md5:	ff6276da66a1f718a2ba869f59110546
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
