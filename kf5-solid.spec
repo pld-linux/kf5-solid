@@ -6,6 +6,7 @@
 %define		kfname		solid
 
 Summary:	Desktop hardware abstraction
+Summary(pl.UTF-8):	Abstrakcja sprzętu dla pulpitu
 Name:		kf5-%{kfname}
 Version:	5.116.0
 Release:	2
@@ -52,11 +53,18 @@ and interacting with hardware independently of the underlying
 operating system.
 
 It provides the following features for application developers:
-
 - Hardware Discovery
 - Power Management
 - Network Management
 
+%description -l pl.UTF-8
+Solid to szkielet integracji urządzeń. Zapewnia metody odpytywania i
+współpracy ze sprzętem niezależnie od używanego systemu operacyjnego.
+
+Udostępnia następujące funkcje dla programistów aplikacji:
+- wykrywanie sprzętu
+- zarządzanie energią
+- zarządzanie siecią
 
 %package devel
 Summary:	Header files for %{kfname} development
