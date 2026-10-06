@@ -8,12 +8,12 @@
 Summary:	Desktop hardware abstraction
 Name:		kf5-%{kfname}
 Version:	5.116.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
 # Source0-md5:	243a13792968d09561f5b775c47c0533
-URL:		http://www.kde.org/
+URL:		https://kde.org/
 BuildRequires:	Qt5Concurrent-devel >= %{qtver}
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -104,11 +104,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.md TODO
 %attr(755,root,root) %{_bindir}/solid-hardware5
+%{_libdir}/libKF5Solid.so.*.*
 %ghost %{_libdir}/libKF5Solid.so.5
-%attr(755,root,root) %{_libdir}/libKF5Solid.so.*.*
 %dir %{_libdir}/qt5/qml/org/kde/solid
 %{_libdir}/qt5/qml/org/kde/solid/qmldir
-%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/solid/libsolidextensionplugin.so
+%{_libdir}/qt5/qml/org/kde/solid/libsolidextensionplugin.so
 %{_datadir}/qlogging-categories5/solid.categories
 %{_datadir}/qlogging-categories5/solid.renamecategories
 
